@@ -133,7 +133,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                     height: 6,
                   ),
                   Text(
-                    'What Flower?', // convolutional nueral network
+                    'What Is That?', // convolutional nueral network
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
