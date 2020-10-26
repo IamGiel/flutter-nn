@@ -1,6 +1,6 @@
-# flutter_explore
+# Nueral Network, Tensorflow and Flutter
 
-A new Flutter project.
+Identify an Item with Nueral Network, Tensorflow and Flutter.
 
 ## Getting Started
 
