@@ -1,18 +1,26 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_explore/splashscreen.dart';
+import 'package:flutter_explore/homescreen.dart';
+// import 'package:ssd_yolo_demo/HomeScreen.dart';
 
-void main() {
-  runApp(MyApp());
+List<CameraDescription> cameras;
+
+Future<Null> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    print('Error $e.code \n Error Message: $e.message');
+  }
+
+  runApp(new MainScreen());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'What Item?',
-      home: MySplash(),
-      debugShowCheckedModeBanner: false,
+      home: HomeScreen(cameras),
     );
   }
 }

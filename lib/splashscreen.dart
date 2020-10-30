@@ -1,6 +1,9 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_explore/home.dart';
+import 'package:flutter_explore/homescreen.dart';
 import 'package:splashscreen/splashscreen.dart';
+
+List<CameraDescription> cameras;
 
 class MySplash extends StatefulWidget {
   @override
@@ -10,9 +13,10 @@ class MySplash extends StatefulWidget {
 class _MySplashState extends State<MySplash> {
   @override
   Widget build(BuildContext context) {
+    print(cameras);
     return SplashScreen(
       seconds: 5,
-      navigateAfterSeconds: Home(),
+      navigateAfterSeconds: HomeScreen(cameras),
       // title: Text('Giel Labz',
       //     style: TextStyle(
       //         fontWeight: FontWeight.bold,
